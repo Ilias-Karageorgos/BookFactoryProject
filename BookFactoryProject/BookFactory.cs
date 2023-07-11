@@ -40,11 +40,7 @@ namespace BookFactoryProject
         }
         public void ShowBooksByColor(BookColor color)
         {           
-                var filteredBookColors = BookList.Where(x => x.Color == color);
-
-                Console.WriteLine("count apo ta vivlia me to sugkekrimeno xroma");
-                Console.WriteLine(filteredBookColors.Count()); //2
-                Console.WriteLine("\n");
+                var filteredBookColors = BookList.Where(x => x.Color == color);               
 
                 foreach (var givenbookcolor in filteredBookColors)
                 {

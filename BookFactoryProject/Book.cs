@@ -11,8 +11,7 @@ namespace BookFactoryProject
     {      
         public BookColor Color { get; set; }
         public string Title { get; set; }
-        public int Pages { get; set; }
-        public BookFactory BookFactory { get; set; }
+        public int Pages { get; set; }       
 
         public Book(string title, int pages, BookColor color)
         {
