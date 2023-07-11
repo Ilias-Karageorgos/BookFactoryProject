@@ -39,9 +39,7 @@ namespace BookFactoryProject
             }
         }
         public void ShowBooksByColor(BookColor color)
-        {
-            foreach (var book in BookList)
-            {
+        {           
                 var filteredBookColors = BookList.Where(x => x.Color == color);
 
                 Console.WriteLine("count apo ta vivlia me to sugkekrimeno xroma");
@@ -51,8 +49,7 @@ namespace BookFactoryProject
                 foreach (var givenbookcolor in filteredBookColors)
                 {
                     Console.WriteLine($"Color: {color} \t|\tTitle: {givenbookcolor.Title}");
-                }
-            }
+                }            
         }
 
         //public void ShowBooksByType((HorrorBook,ComedyBook)Book )
