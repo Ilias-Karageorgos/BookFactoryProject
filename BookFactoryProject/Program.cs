@@ -76,7 +76,7 @@ namespace BookFactoryProject
             factory1.ShowBooksByColor(BookColor.Red);
             Console.WriteLine("------------------------------------------------------------------------");
 
-            ////////////factory1.ShowBooksByType(Book b1);
+            factory1.ShowBooksByType("horror");        
         }
     }
 }

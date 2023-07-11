@@ -39,28 +39,49 @@ namespace BookFactoryProject
             }
         }
         public void ShowBooksByColor(BookColor color)
-        {           
-                var filteredBookColors = BookList.Where(x => x.Color == color);               
+        {
+            var filteredBookColors = BookList.Where(x => x.Color == color);
 
-                foreach (var givenbookcolor in filteredBookColors)
-                {
-                    Console.WriteLine($"Color: {color} \t|\tTitle: {givenbookcolor.Title}");
-                }            
+            foreach (var givenbookcolor in filteredBookColors)
+            {
+                Console.WriteLine($"Color: {color} \t|\tTitle: {givenbookcolor.Title}");
+            }
         }
+        public void ShowBooksByType(string bookType)
+        {
+            var filteredBooks = BookList.Where(book =>
+            {
+                if (bookType.Equals("horror", StringComparison.OrdinalIgnoreCase))
+                {
+                    return book is HorrorBook;
+                }
+                else if (bookType.Equals("comedy", StringComparison.OrdinalIgnoreCase))
+                {
+                    return book is ComedyBook;
+                }
+                else
+                {
 
-        //public void ShowBooksByType((HorrorBook,ComedyBook)Book )
-        //{
-        //    foreach (var Book in BookList)
-        //    {
-        //        var filteredBookTypes =BookList.Where(x => x.GetType() == );
+                    return false;
+                }
 
-        //        foreach (var item in filteredBookTypes)
-        //        {
-        //            Console.WriteLine(item.Title);
-        //        }
+            });
 
-        //    }
-        //}
+            foreach (var book in filteredBooks)
+            {
+                Console.WriteLine(book.Title);
+            }
+        }
     }
 }
+
+
+//if (bookType.Equals("horror", StringComparison.OrdinalIgnoreCase)) 
+//auto einai idio me auto sthn ousia
+//if (bookType.ToLower() == "horror")
+//to
+//book is HorrorBook
+//boreis na elenkseis an einai book typou Book einai HorrorBook h' ComedyBook
+//epistrefei true h false dld
+//    }
 
